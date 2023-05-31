@@ -11,7 +11,7 @@ namespace Geometry.UnitTests.Tests
         public void ValidateShape_ShouldReturnCorrectValidationResult_WhenFigureAndExpectedResultPassed(Shape c, bool isValid)
         {
             var result = ShapeValidator.ValidateShape(c);
-            Assert.Equal(result.IsValid, isValid);
+            Assert.Equal(isValid, result.IsValid);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Domain.UnitTests.Tests
         [ClassData(typeof(RectangularityTestData))]
         public void TriangleIsRectangular_ShouldReturnCorrectResult_WhenTriangleAndExpectedResultPassed(Triangle t, bool isRectangular)
         {
-            Assert.Equal(t.IsRectangular, isRectangular);
+            Assert.Equal(isRectangular, t.IsRectangular);
         }
     }
 }
