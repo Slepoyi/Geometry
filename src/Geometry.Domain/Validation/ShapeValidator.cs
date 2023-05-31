@@ -29,6 +29,21 @@ namespace Geometry.Domain.Validation
         {
             var result = new ShapeValidationResult();
 
+            if (t.A <= 0)
+            {
+                result.Errors.Add($"Side A should be greater than zero.");
+            }
+
+            if (t.B <= 0)
+            {
+                result.Errors.Add($"Side B should be greater than zero.");
+            }
+
+            if (t.C <= 0)
+            {
+                result.Errors.Add($"Side C should be greater than zero.");
+            }
+
             if (t.A + t.B < t.C
                 || t.A + t.C < t.B
                 || t.B + t.C < t.A)
