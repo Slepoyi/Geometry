@@ -1,4 +1,5 @@
 ﻿using Geometry.Domain.BaseShape;
+using Geometry.Domain.Helper;
 
 namespace Geometry.Domain.Shapes
 {
@@ -14,7 +15,10 @@ namespace Geometry.Domain.Shapes
         {
             get
             {
-                return Math.PI * R * R;
+                var area = Math.PI * R * R;
+                if (area.IsNanOrInfinity())
+                    return -1;
+                return area;
             }
         }
     }

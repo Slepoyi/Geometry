@@ -1,4 +1,5 @@
 ﻿using Geometry.Domain.BaseShape;
+using Geometry.Domain.Helper;
 
 namespace Geometry.Domain.Shapes
 {
@@ -19,7 +20,10 @@ namespace Geometry.Domain.Shapes
             get
             {
                 var p = (A + B + C) / 2;
-                return Math.Sqrt(p * (p - A) * (p - B) * (p - C));
+                var area = Math.Sqrt(p * (p - A) * (p - B) * (p - C));
+                if (area.IsNanOrInfinity())
+                    return -1;
+                return area;
             }
         }
 
