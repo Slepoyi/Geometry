@@ -25,22 +25,13 @@ var triangleArea = t.Area; // 6
 var isRectangular = t.IsRectangular; // true
 ```
 
-If you recieve your figure from an external source you can use it like that:
-
+If you try to create an invalid figure the exception will be thrown:
 ```csharp
-void MyMethod(Shape s)
-{
-    var validationResult = ShapeValidator.ValidateShape(s);
-    if (validationResult.IsValid)
-        // logic if shape is valid
-    else
-        // logic if shape is invalid
-}
+var c = new Circle(-2); // ArgumentOutOfRangeException
+var t = new Triangle(-2, 5, 4); // ArgumentOutOfRangeException
 ```
-**Note: it is always a good idea to validate things which you get from an external sources.**
 ## Add a new shape
 To add a new shape you should perform the following steps:
 * Create a shape class in the ```Geometry.Domain.Shapes``` and inherit from ```Shape```charp class.
 * Implement shape logic: create a constructor, implement getter for ```Area``` property, implement additional properties if needed.
-* (Optional) Add validation logic to ```ShapeValidator``` class.
 * (Optional) Add unit tests to shape validation logic and shape properties.
