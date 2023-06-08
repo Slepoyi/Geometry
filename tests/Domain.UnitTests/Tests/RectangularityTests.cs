@@ -7,7 +7,7 @@ namespace Domain.UnitTests.Tests
     {
 
         [Theory]
-        [ClassData(typeof(RectangularityTestData))]
+        [MemberData(nameof(RectangularityTestData.TriangleData), MemberType = typeof(RectangularityTestData))]
         public void TriangleIsRectangular_ShouldReturnCorrectResult_WhenTriangleAndExpectedResultPassed(Triangle t, bool isRectangular)
         {
             Assert.Equal(isRectangular, t.IsRectangular);

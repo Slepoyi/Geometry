@@ -1,15 +1,19 @@
 ﻿using Geometry.Domain.BaseShape;
 using Geometry.UnitTests.TestData;
 
-namespace Geometry.UnitTests.Tests
+namespace Domain.UnitTests.Tests
 {
     public class CalculationsTests
     {
+        private const int DigitsPrecision = 4;
+
         [Theory]
         [ClassData(typeof(CalculationTestData))]
         public void ShapeArea_ShouldReturnCorrectAreaRounded4_WhenFigureAndExpectedAreaPassed(Shape c, double expectedArea)
         {
-            Assert.Equal(Math.Round(expectedArea, 4), Math.Round(c.Area, 4));
+            Assert.Equal(
+                Math.Round(expectedArea, DigitsPrecision),
+                Math.Round(c.Area, DigitsPrecision));
         }
     }
 }
