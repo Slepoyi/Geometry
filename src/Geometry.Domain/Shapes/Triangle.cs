@@ -11,15 +11,6 @@ namespace Geometry.Domain.Shapes
         private readonly double _p;
         public Triangle(double a, double b, double c)
         {
-            if (a < 0)
-                throw new ArgumentOutOfRangeException(nameof(A));
-
-            if (b < 0)
-                throw new ArgumentOutOfRangeException(nameof(B));
-
-            if (c < 0)
-                throw new ArgumentOutOfRangeException(nameof(C));
-
             if (a + b < c
                || a + c < b
                || b + c < a)
