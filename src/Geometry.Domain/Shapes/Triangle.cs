@@ -1,4 +1,5 @@
 ﻿using Geometry.Domain.BaseShape;
+using Geometry.Domain.Exceptions;
 using Geometry.Domain.Helper;
 
 namespace Geometry.Domain.Shapes
@@ -32,7 +33,7 @@ namespace Geometry.Domain.Shapes
         /// <summary>
         /// Public constructor
         /// </summary>
-        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// <exception cref="TriangleInequalityDoesNotHoldException">
         /// Thrown when triangle inequality does not hold
         /// </exception>
         /// <param name="a">First side of a triangle</param>
@@ -43,7 +44,7 @@ namespace Geometry.Domain.Shapes
             if (a + b < c
                || a + c < b
                || b + c < a)
-                throw new ArgumentOutOfRangeException(
+                throw new TriangleInequalityDoesNotHoldException(
                     "Triangle inqeuality does not hold");
 
             A = a;
