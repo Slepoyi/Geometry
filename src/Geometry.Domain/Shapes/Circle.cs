@@ -8,6 +8,9 @@ namespace Geometry.Domain.Shapes
         public double R { get; private set; }
         public Circle(double r)
         {
+            if (r < 0)
+                throw new ArgumentOutOfRangeException(nameof(r));
+
             R = r;
         }
 
